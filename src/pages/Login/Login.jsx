@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate if using React Router
+import { useNavigate } from 'react-router-dom';  
 
 const UserArray = [
   { uName: 'Noila', uSurname: 'Sotvoldiyeva' },
@@ -14,8 +14,7 @@ const UserArray = [
 ];
 
 const Login = () => {
-  const navigate = useNavigate(); // Replace with your routing logic
-
+  const navigate = useNavigate();  
   const fnLogin = (e) => {
     e.preventDefault();
     const name = e.target.username.value;
@@ -26,17 +25,17 @@ const Login = () => {
     );
 
     if (userExists) {
-      navigate('/'); // Navigate to the home page or desired route upon successful login
-      window.localStorage.setItem('token', 'zxcvbnm'); // Set token in localStorage
+      navigate('/');  
+      window.localStorage.setItem('token', 'zxcvbnm');  
     } else {
-      navigate('/login'); // Navigate back to login page if user not found
+      navigate('/login');  
     }
   };
 
   return (
     <div>
       <form onSubmit={fnLogin} className='form-control w-50 m-auto' action="#">
-        <h2>Log in</h2>
+        <h2>You can enter my web-site with your Name and Surname. If you cant just type mines</h2>
         <input className='form-control mb-3' type="text" placeholder='Name' name='username' />
         <input className='form-control mb-3' type="text" placeholder='Surname' name='surname' />
         <button className='btn btn-info' type='submit'>Log in</button>
